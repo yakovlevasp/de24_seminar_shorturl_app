@@ -30,7 +30,7 @@ docker build -t fastapi-url-shortener .
 
 ### Шаг 2: Запуск контейнера
 ```bash
-docker run -d -p 8000:80 -v $(pwd)/data:/app/data fastapi-url-shortener
+docker run -d -p 8000:80 -v shorturl_data:/app/data fastapi-url-shortener
 ```
 
 ### Шаг 3: Проверить работу можно запросом
@@ -85,7 +85,8 @@ curl -X POST "http://localhost:8000/shorten" \
 - **Uvicorn**
 
 ### Примечание
-- Данные базы хранятся в `data/url.db`.
+- Данные базы хранятся в `url.db`.
 - Контейнер использует том `/app/data`, чтобы данные сохранялись между запусками.
+- DockerHub: https://hub.docker.com/r/yakovlevasp/shorturl-service/tags
 
  
